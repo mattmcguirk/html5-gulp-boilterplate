@@ -36,8 +36,8 @@ gulp.task('vendorStyles', function(){
         console.log(error.message);
         this.emit('end');
     }}))
-    .pipe(concat('vendor.css'))
     .pipe(sass())
+    .pipe(concat('vendor.css'))
     .pipe(autoprefixer('last 2 versions'))
     .pipe(gulp.dest('dist/css/'))
     .pipe(rename({suffix: '.min'}))
